@@ -1,27 +1,32 @@
 # In-Memory LRU Cache System
 
- # what is Cache Memory 
- Currently Demanded Localities are kep in a smaller and faster memory called as cache because every time Accessing main memory becomes too costly interms of time.
+## what is Cache Memory 
  
- Locality of reference: if CPU has requested an Address for mempry Access then that particular Address or nearby Addresses will be Accessed soon.
+ Currently Demanded Localities are kep in a smaller and faster memory called as cache in order to reduce expensive main memory accesses.
+ 
+### Locality of reference: if CPU has requested an Address for memory Access then that particular Address or nearby Addresses will be Accessed soon.
 
- # Working of Cache Memory
+## Working of Cache Memory
 
-1. Cache Hit: when demanded content of cpu is present in cache.
-2. Cache Miss: when demanded content of cpu is present in cache.
-3. Hit Ratio: Fraction of time cpu experirences hit in cache.
+### 1. Cache Hit: when demanded data of cpu is present in cache.
+### 2. Cache Miss: when demanded data of cpu is not present in cache.
+### 3. Hit Ratio: Fraction of time cpu experirences hit in cache.
                Hit ratio = No.of hit / total memory reference
                Miss ratio = 1 - Hit ratio
    
-# what happens when CPU demanded content is not present in cache 
+## What Happens During Cache Miss?
 
-when CPU demanded content is not present in cache then it is said to be cache miss, so the demanded content is sent from main memory to cpu and along with it, the block (which contains missed content ) is copied from main memory to cache for future references.
+when CPU demanded content is not present in cache then it is said to be cache miss, so the demanded content is sent from main memory to cpu and along with it, the block (which contains missed content ) is copied from main memory to cache for future references. This reduces repeated expensive memory accesses.
+
+---
 
 # Block Replacement Policies
 
-1. FIFO (First-In-FirstOut)
-2. Optimal
-3. LRU (Least Recently Used)
+Since cache memory is limited, older data must be removed when capacity is exceeded.
+
+### 1. FIFO (First-In-FirstOut)
+### 2. Optimal
+### 3. LRU (Least Recently Used)
 
 ## Why LRU is Commonly Used?
 
@@ -31,6 +36,12 @@ when CPU demanded content is not present in cache then it is said to be cache mi
              - low cache miss penalty. 
              - efficiently utilize memory
              - optimize frequently accessed data retrieval
+LRU-based caching is commonly used in:
+- Browsers
+- Databases
+- Backend APIs
+- Operating Systems
+- Distributed Systems
    
 hence, this Policies is used to implemented in real systems.
 
