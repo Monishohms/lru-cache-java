@@ -143,7 +143,19 @@ java Main
 ## Sample Output
 
 ### Cache PUT Operations
-![Uploading image.png…]()
+
+<img width="901" height="762" alt="image" src="https://github.com/user-attachments/assets/bb2f59e8-43cf-4e9a-905b-e78212f0cd25" />
+
+### Cache HIT and MISS
+
+<img width="678" height="546" alt="image (1)" src="https://github.com/user-attachments/assets/6c0949ba-6731-49c7-b2c4-bc0a4dce1e9a" />
+
+### LRU Eviction
+
+<img width="752" height="396" alt="image (2)" src="https://github.com/user-attachments/assets/e15a172e-58f4-473f-a056-c73e053c44d0" />
+
+
+
 
 
 
