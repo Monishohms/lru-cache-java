@@ -9,12 +9,22 @@ public class LRUCache {
     Map<Integer, Node> cache = new HashMap<>();
 
     public void get(int key) {
+        System.out.println();
+        System.out.println("==========================================================");
+        System.out.println("CACHE GET OPERATION");
         System.out.println("CPU Requests: " + key);
         Node s = cache.get(key);
-        if (s == null)
-            System.out.println("cache miss: " + -1);
+        if (s == null) {
+
+            System.out.println("Cache Status : Miss");
+            System.out.println("Cached Data : -1");
+            System.out.println("==========================================================");
+        }
+
         else {
-            System.out.println("cache hit: " + s.value);
+            System.out.println("Cache Status : Hit");
+            System.out.println("Cached Data : " + s.value);
+            System.out.println("==========================================================");
             if (s == tail) {
                 tail = s;
             } else if (s == head) {
@@ -49,23 +59,51 @@ public class LRUCache {
                     head = tail = newNode;
                     cache.put(newNode.key, newNode);
                     currentCapacity++;
+                    System.out.println();
+                    System.out.println("==========================================================");
+                    System.out.println("CACHE PUT OPERATION");
+                    System.out.println("Inserted Key : " + newNode.key);
+                    System.out.println("Cached Data  : " + newNode.value);
+                    System.out.println("Cache Status : SUCCESS");
+                    System.out.println("==========================================================");
+
                 } else {
                     tail.next = newNode;
                     newNode.prev = tail;
                     tail = newNode;
                     cache.put(newNode.key, newNode);
                     currentCapacity++;
+                    System.out.println();
+                    System.out.println("==========================================================");
+                    System.out.println("CACHE PUT OPERATION");
+                    System.out.println("Inserted Key : " + newNode.key);
+                    System.out.println("Cached Data  : " + newNode.value);
+                    System.out.println("Cache Status : SUCCESS");
+                    System.out.println("==========================================================");
+
                 }
             } else { // cache is full
 
                 cache.remove(head.key);
                 currentCapacity--;
                 if (head.next == null) { // this is when cacheCapacity is 1
+                    Node tempHead = head;
                     head = newNode;
                     tail = newNode;
                     cache.put(newNode.key, newNode);
                     currentCapacity++;
+                    System.out.println();
+                    System.out.println("==========================================================");
+                    System.out.println("CACHE PUT OPERATION");
+                    System.out.println("CACHE CAPACITY EXCEEDED ----> Initiating LRU Eviction Policy...");
+                    System.out.println("Evicted Key : " + tempHead.key);
+                    System.out.println("Inserted Key : " + newNode.key);
+                    System.out.println("Cached Data  : " + newNode.value);
+                    System.out.println("Cache Status : SUCCESS");
+                    System.out.println("==========================================================");
+
                 } else { // this is when cacheCapacity is > 1
+                    Node tempHead = head;
                     head = head.next;
                     head.prev = null;
                     tail.next = newNode;
@@ -73,6 +111,16 @@ public class LRUCache {
                     tail = newNode;
                     cache.put(newNode.key, newNode);
                     currentCapacity++;
+                    System.out.println();
+                    System.out.println("==========================================================");
+                    System.out.println("CACHE PUT OPERATION");
+                    System.out.println("CACHE CAPACITY EXCEEDED ----> Initiating LRU Eviction Policy...");
+                    System.out.println("Evicted Key : " + tempHead.key);
+                    System.out.println("Inserted Key : " + newNode.key);
+                    System.out.println("Cached Data  : " + newNode.value);
+                    System.out.println("Cache Status : SUCCESS");
+                    System.out.println("==========================================================");
+
                 }
 
             }
@@ -105,14 +153,16 @@ public class LRUCache {
     }
 
     public void displayCache() {
-        System.out.println("cache memory:");
+        System.out.println();
+        System.out.println("==========================================================");
+        System.out.println("Current Cache State:");
         Node s = head;
         while (s != null) {
-            System.out.print("[key: " + s.key + ", Value: " + s.value + "]--->");
+            System.out.println("[key: " + s.key + ", Value: " + s.value + "]");
             s = s.next;
         }
 
-        System.out.println();
+        System.out.println("==========================================================");
 
     }
 

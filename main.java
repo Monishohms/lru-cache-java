@@ -1,19 +1,18 @@
 public class main {
     public static void main(String[] args) {
         LRUCache cache = new LRUCache();
-        cache.put(1, "monish");
-        cache.put(2, "Tanish");
-        cache.put(3, "Om");
-        cache.put(4, "Hema");
-        cache.put(5, "rani");
-        cache.put(6, "Monu");
-        cache.put(7, "sonu");
-        cache.put(6, "Monish");
-        cache.put(7, "Tanish");
+        cache.put(101, "User_Profile_Response");
+        cache.put(102, "Product_Catalog");
+        cache.put(103, "Recommendation_Data");
+        cache.put(104, "Session_Metadata");
+        cache.put(105, "Payment_Service_Config");
+
+        cache.get(103);
+        cache.get(106);
         cache.displayCache();
-        cache.get(3);
+
+        cache.put(106, "Analytics_Dashboard_Data");
         cache.displayCache();
-        cache.get(88);
 
     }
 
