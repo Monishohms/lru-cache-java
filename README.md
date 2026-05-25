@@ -4,7 +4,7 @@
  
  Currently Demanded Localities are kep in a smaller and faster memory called as cache in order to reduce expensive main memory accesses.
  
-### Locality of reference: if CPU has requested an Address for memory Access then that particular Address or nearby Addresses will be Accessed soon.
+#### Locality of reference: if CPU has requested an Address for memory Access then that particular Address or nearby Addresses will be Accessed soon.
 
 ## Working of Cache Memory
 
@@ -32,10 +32,11 @@ Since cache memory is limited, older data must be removed when capacity is excee
 
 1. LRU replaces the block which have not been used for longest period of time.
 2. LRU is commonly used because this policies gives:
-             - High hit ratio
-             - low cache miss penalty. 
-             - efficiently utilize memory
-             - optimize frequently accessed data retrieval
+   - High hit ratio
+   - low cache miss penalty. 
+   - efficiently utilize memory
+   - optimize frequently accessed data retrieval
+     
 LRU-based caching is commonly used in:
 - Browsers
 - Databases
