@@ -8,15 +8,15 @@
 
 ## Working of Cache Memory
 
-### 1. Cache Hit: when demanded data of cpu is present in cache.
-### 2. Cache Miss: when demanded data of cpu is not present in cache.
-### 3. Hit Ratio: Fraction of time cpu experirences hit in cache.
+### 1. Cache Hit: when requested data of cpu is present in cache.
+### 2. Cache Miss: when requested data of cpu is not present in cache.
+### 3. Hit Ratio: Fraction of time cpu experience hit in cache.
                Hit ratio = No.of hit / total memory reference
                Miss ratio = 1 - Hit ratio
    
 ## What Happens During Cache Miss?
 
-when CPU demanded content is not present in cache then it is said to be cache miss, so the demanded content is sent from main memory to cpu and along with it, the block (which contains missed content ) is copied from main memory to cache for future references. This reduces repeated expensive memory accesses.
+when CPU requested data is not present in cache then it is said to be cache miss, so the requested data is sent from main memory to cpu and along with it, the block (which contains missed data ) is copied from main memory to cache for future references. This reduces repeated expensive memory accesses.
 
 ---
 
@@ -44,7 +44,7 @@ LRU-based caching is commonly used in:
 - Operating Systems
 - Distributed Systems
    
-hence, this Policies is used to implemented in real systems.
+hence, this Policies is implemented in real systems.
 
 ## Why HashMap and Doubly Linked List?
 
